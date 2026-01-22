@@ -1,0 +1,41 @@
+[
+  {
+    "STIG_NAME": "ADOBE COLDFUSION",
+    "STIG_ID": "ADOBE_COLDFUSION_STIG",
+    "FILE_NAME": "U_ADOBE_COLDFUSION_STIG_V1R1_MANUAL-XCCDF.XML",
+    "FULL_PATH": "C:\\STIG Library\\U_Adobe_ColdFusion_V1R1_STIG.zip\\U_Adobe_ColdFusion_V1R1_Manual_STIG\\U_Adobe_ColdFusion_STIG_V1R1_Manual-xccdf.xml",
+    "STIG_VERSION": "1",
+    "STIG_REVISION": "1",
+    "BENCHMARK_DATE": "25 NOV 2025",
+    "TOTAL_VULNS": "84",
+    "NUM_CAT1": "7",
+    "NUM_CAT2": "64",
+    "NUM_CAT3": "13"
+  },
+  {
+    "STIG_NAME": "MAINFRAME PRODUCT",
+    "STIG_ID": "MAINFRAME_PRODUCT_SRG",
+    "FILE_NAME": "U_MAINFRAME_PRODUCT_SRG_V3R4_MANUAL-XCCDF.XML",
+    "FULL_PATH": "C:\\STIG Library\\U_Mainframe_Product_V3R4_SRG.zip\\U_Mainframe_Product_V3R4_Manual_SRG\\U_Mainframe_Product_SRG_V3R4_Manual-xccdf.xml",
+    "STIG_VERSION": "3",
+    "STIG_REVISION": "4",
+    "BENCHMARK_DATE": "28 OCT 2025",
+    "TOTAL_VULNS": "194",
+    "NUM_CAT1": "3",
+    "NUM_CAT2": "191",
+    "NUM_CAT3": "0"
+  },
+  {
+    "STIG_NAME": "WEB SERVER",
+    "STIG_ID": "WEB_SERVER_SRG",
+    "FILE_NAME": "U_WEB_SERVER_SRG_V4R4_MANUAL-XCCDF.XML",
+    "FULL_PATH": "C:\\STIG Library\\U_Web_Server_V4R4_SRG.zip\\U_Web_Server_V4R4_Manual_SRG\\U_Web_Server_SRG_V4R4_Manual-xccdf.xml",
+    "STIG_VERSION": "4",
+    "STIG_REVISION": "4",
+    "BENCHMARK_DATE": "28 OCT 2025",
+    "TOTAL_VULNS": "126",
+    "NUM_CAT1": "5",
+    "NUM_CAT2": "121",
+    "NUM_CAT3": "0"
+  }
+]
